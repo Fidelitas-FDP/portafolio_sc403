@@ -19,8 +19,8 @@
         <link th:href="@{/css/estilos.css}" rel="stylesheet"/>
     </head>
 
-
 <!-- Fragmento #2  define el encabezado de las páginas, en concreto el menú y enlaces rápidos -->
+    <body>
         <header th:fragment="header" class="header">
             <nav class="navbar navbar-expand-sm p-0">
                 <div class="container">                    
@@ -66,8 +66,7 @@
                             </li>
                         </ul>
                         <div id="resultBlock">
-                        </div>         
-                        
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -86,3 +85,5 @@
         <footer th:fragment="footer" class="p-2 mt-5 bg-info text-white">
             <p class="lead text-center">[[#{plantilla.derechos}]] &COPY;</p>
         </footer>
+    </body>
+</html>
