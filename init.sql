@@ -1,3 +1,4 @@
+-- este script no se corre en lo absoluto para aiven
 -- Sección de administración (ejecutar una vez en un entorno de desarrollo)
 drop database if exists techshop;
 drop user if exists usuario_prueba;
