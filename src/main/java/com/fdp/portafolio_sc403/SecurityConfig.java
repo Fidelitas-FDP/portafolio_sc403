@@ -23,6 +23,9 @@ public class SecurityConfig {
         var rutas = rutaService.getRutas();
 
         http.authorizeHttpRequests(requests -> {
+            // permitir recursos estaticos por codigo base antes del bucle dinamico, ESTANDAR
+            requests.requestMatchers("/css/**", "/js/**", "/webjars/**", "/fav/**", "/login", "/registro/**").permitAll();
+            
             for (Ruta ruta : rutas) {
                 if (ruta.isRequiereRol()) {
                     requests.requestMatchers(ruta.getRuta()).hasRole(ruta.getRol().getRol());

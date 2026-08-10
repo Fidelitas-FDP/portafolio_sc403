@@ -2,7 +2,6 @@ package com.fdp.portafolio_sc403.controller;
 
 import com.fdp.portafolio_sc403.domain.Usuario;
 import com.fdp.portafolio_sc403.service.RegistroService;
-import jakarta.mail.MessagingException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,8 +32,7 @@ public class RegistroController {
     }
 
     @PostMapping("/crearUsuario")
-    public String crearUsuario(Model model, Usuario usuario) 
-            throws MessagingException {
+    public String crearUsuario(Model model, Usuario usuario) {
         model = registroService.crearUsuario(model, usuario);
         return "/registro/salida";
     }
@@ -61,8 +59,7 @@ public class RegistroController {
     }
 
     @PostMapping("/recordarUsuario")
-    public String recordarUsuario(Model model, Usuario usuario) 
-            throws MessagingException {
+    public String recordarUsuario(Model model, Usuario usuario) {
         model = registroService.recordarUsuario(model, usuario);
         return "/registro/salida";
     }

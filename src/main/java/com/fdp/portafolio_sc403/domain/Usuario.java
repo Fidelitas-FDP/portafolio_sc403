@@ -45,6 +45,8 @@ public class Usuario implements Serializable {
     @Column(length = 1024)
     private String rutaImagen;
     
+    // si este mapeo no sirve, cambiar a findByUsername(username), sin filtrado por activo (UsuarioDetailService)
+    @Column(name = "activo", columnDefinition = "TINYINT(1)")
     private boolean activo;
 
     // Relación Many-to-Many con la entidad Rol
