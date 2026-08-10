@@ -26,7 +26,7 @@ public class IndexController {
         model.addAttribute("productos", lista);
         var categorias = categoriaService.getCategorias(true);
         model.addAttribute("categorias", categorias);
-        return "/index";
+        return "index"; // se quito "/" inicial para linux image de docker
     }
     
     @GetMapping("/consultas/{idCategoria}")
@@ -43,6 +43,6 @@ public class IndexController {
         }
         var categorias = categoriaService.getCategorias(true);
         model.addAttribute("categorias", categorias);
-        return "/index";
+        return "index"; // se quito "/" inicial para linux image de docker
     }
 }

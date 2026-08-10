@@ -33,7 +33,7 @@ public class CategoriaController {
         var categorias = categoriaService.getCategorias(false);
         model.addAttribute("categorias", categorias);
         model.addAttribute("totalCategorias", categorias.size());
-        return "/categoria/listado";
+        return "categoria/listado"; // se quito "/" inicial para linux image de docker
     }
 
     @PostMapping("/guardar")
@@ -73,6 +73,6 @@ public class CategoriaController {
             return "redirect:/categoria/listado";
         }
         model.addAttribute("categoria", categoriaOpt.get());
-        return "/categoria/modifica";
+        return "categoria/modifica"; // se quito "/" inicial para linux image de docker
     }
 }

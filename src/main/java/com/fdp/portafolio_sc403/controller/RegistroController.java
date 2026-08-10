@@ -23,18 +23,18 @@ public class RegistroController {
     
     @GetMapping("/nuevo")
     public String nuevo(Model model, Usuario usuario) {
-        return "/registro/nuevo";
+        return "registro/nuevo"; // se quito "/" inicial para linux image de docker
     }
 
     @GetMapping("/recordar")
     public String recordar(Model model, Usuario usuario) {
-        return "/registro/recordar";
+        return "registro/recordar"; // se quito "/" inicial para linux image de docker
     }
 
     @PostMapping("/crearUsuario")
     public String crearUsuario(Model model, Usuario usuario) {
         model = registroService.crearUsuario(model, usuario);
-        return "/registro/salida";
+        return "registro/salida"; // se quito "/" inicial para linux image de docker
     }
 
     @GetMapping("/activacion/{usuario}/{id}")
@@ -44,9 +44,9 @@ public class RegistroController {
             @PathVariable(value = "id") String id) {
         model = registroService.activar(model, usuario, id);
         if (model.containsAttribute("usuario")) {
-            return "/registro/activa";
+            return "registro/activa"; // se quito "/" inicial para linux image de docker
         } else {
-            return "/registro/salida";
+            return "registro/salida"; // se quito "/" inicial para linux image de docker
         }
     }
 
@@ -61,6 +61,6 @@ public class RegistroController {
     @PostMapping("/recordarUsuario")
     public String recordarUsuario(Model model, Usuario usuario) {
         model = registroService.recordarUsuario(model, usuario);
-        return "/registro/salida";
+        return "registro/salida"; // se quito "/" inicial para linux image de docker
     }
 }

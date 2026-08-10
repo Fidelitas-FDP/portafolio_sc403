@@ -6,7 +6,6 @@ import com.fdp.portafolio_sc403.service.ProductoService;
 import jakarta.validation.Valid;
 import java.util.Locale;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +38,7 @@ public class ProductoController {
         model.addAttribute("totalProductos", productos.size());
         var categorias = categoriaService.getCategorias(true);
         model.addAttribute("categorias", categorias);
-        return "/producto/listado";
+        return "producto/listado"; // se quito "/" inicial para linux image de docker
     }
 
     @PostMapping("/guardar")
@@ -98,7 +97,7 @@ public class ProductoController {
         var categorias = categoriaService.getCategorias(true);
         model.addAttribute("categorias", categorias);
 
-        return "/producto/modifica";
+        return "producto/modifica"; // se quito "/" inicial para linux image de docker
     }
 
 //    @PostMapping("/consultaFecha")
